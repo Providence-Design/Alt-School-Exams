@@ -11,6 +11,10 @@ resource "aws_instance" "web" {
   }
   security_groups = [aws_security_group.web_sg.name]
 }
+output "ec2_public_ip" {
+  description = "The public IP address of the EC2 instance"
+  value       = aws_instance.web.public_ip
+}
 
 resource "aws_security_group" "web_sg" {
   name        = "web-sg"
