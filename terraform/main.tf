@@ -16,8 +16,12 @@ output "ec2_public_ip" {
   value       = aws_instance.web.public_ip
 }
 
+# Generate random suffix
+resource "random_id" "suffix" {
+  byte_length = 4
+}
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg"
+  name        = "web-sg-${random_id.suffix.hex}"
   description = "Allow web traffic"
   ingress {
     from_port   = 22
