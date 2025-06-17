@@ -12,27 +12,27 @@
   </style>
   <link rel="manifest" href="manifest.json">
 </head>
-<body class="text-gray-800 font-sans bg-gray-100">
+<body class="text-gray-800 font-sans bg-pink-50">
 
   <!-- Loader Spinner -->
   <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-    <div class="animate-spin h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+    <div class="animate-spin h-12 w-12 border-4 border-pink-500 border-t-transparent rounded-full"></div>
   </div>
 
   <!-- Main Content -->
   <div class="min-h-screen flex flex-col items-center justify-center px-4" style="display: none" id="content">
     <div class="bg-white shadow-2xl rounded-xl p-10 w-full max-w-3xl text-center">
       <img src="profile.jpeg" alt="Providence Annor Asemah" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
-      
-      <h1 class="text-4xl font-bold mb-2 text-blue-600">Providence Annor Asemah</h1>
-      <h2 class="text-xl font-medium mb-4">Lead Cloud & DevOps Engineer</h2>
-      <h3 class="text-2xl font-semibold text-gray-700 mb-4">SwiftRoute AI: The Future of AI-Powered Logistics</h3>
 
-      <button onclick="togglePitch()" class="mb-6 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded transition duration-300 transform hover:scale-105">
+      <h1 class="text-4xl font-bold mb-2 text-pink-600">Providence Annor Asemah</h1>
+      <h2 class="text-xl font-medium mb-4">Lead Cloud & DevOps Engineer</h2>
+      <h3 class="text-2xl font-semibold text-pink-700 mb-4">SwiftRoute AI: The Future of AI-Powered Logistics</h3>
+
+      <button onclick="togglePitch()" class="mb-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded transition duration-300 transform hover:scale-105">
         Show/Hide Pitch
       </button>
 
-      <div id="pitch" class="hidden text-gray-600 mb-6">
+      <div id="pitch" class="hidden text-pink-600 mb-6">
         <p>
           SwiftRoute AI reimagines logistics with real-time AI routing, predictive load balancing,
           and intelligent delivery networks. It’s designed to reduce delays, cut costs, and transform how goods move across urban and rural areas.
@@ -41,16 +41,16 @@
 
       <!-- About -->
       <div class="text-left mt-6">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">About Us</h4>
-        <p class="text-sm text-gray-700">
+        <h4 class="text-lg font-semibold text-pink-800 mb-2">About Us</h4>
+        <p class="text-sm text-pink-700">
           SwiftRoute AI is a prototype built to demonstrate the future of smart supply chains. Built on scalable cloud infrastructure, it empowers businesses with precision logistics through DevOps and automation.
         </p>
       </div>
 
       <!-- How It Works -->
       <div class="text-left mt-6">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">How It Works</h4>
-        <ul class="list-disc list-inside text-gray-700 text-sm">
+        <h4 class="text-lg font-semibold text-pink-800 mb-2">How It Works</h4>
+        <ul class="list-disc list-inside text-pink-700 text-sm">
           <li>Step 1: User enters delivery request</li>
           <li>Step 2: AI assigns optimal delivery route</li>
           <li>Step 3: Dashboard shows estimated delivery time</li>
@@ -59,8 +59,8 @@
 
       <!-- About Me -->
       <div class="text-left mt-6">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">About Me</h4>
-        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <h4 class="text-lg font-semibold text-pink-800 mb-2">About Me</h4>
+        <ul class="list-disc list-inside text-sm text-pink-700 space-y-1">
           <li>3+ years in DevOps and Cloud Infrastructure</li>
           <li>Skilled in AWS, GCP, Kubernetes, Docker, Terraform</li>
           <li>Previous roles at Betika and Turntabl Ghana Ltd</li>
@@ -71,39 +71,48 @@
 
       <!-- Contact Info -->
       <div class="text-left mt-6">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">Contact Us</h4>
-        <p class="text-sm text-gray-700">Email: baabaprovidence@gmail.com</p>
-        <p class="text-sm text-gray-700">GitHub: <a href="https://github.com/Providence-Design" target="_blank" class="text-blue-600 hover:underline">@Providence-Design</a></p>
+        <h4 class="text-lg font-semibold text-pink-800 mb-2">Contact Us</h4>
+        <p class="text-sm text-pink-700">Email: baabaprovidence@gmail.com</p>
+        <p class="text-sm text-pink-700">
+          GitHub: 
+          <a href="https://github.com/Providence-Design" target="_blank" class="text-pink-600 hover:underline">
+            @Providence-Design
+          </a>
+        </p>
       </div>
 
       <!-- Contact Form -->
       <div class="text-left mt-6">
-        <h4 class="text-lg font-semibold text-gray-800 mb-2">Send Us a Message</h4>
+        <h4 class="text-lg font-semibold text-pink-800 mb-2">Send Us a Message</h4>
         <form id="contact-form" action="https://formspree.io/f/moqzrzor" method="POST" class="space-y-4 mt-2">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded">
-          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 border rounded">
-          <textarea name="message" placeholder="Your Message" rows="4" required class="w-full px-4 py-2 border rounded"></textarea>
-          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition duration-300 transform hover:scale-105">Send Message</button>
+          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border border-pink-300 rounded">
+          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 border border-pink-300 rounded">
+          <textarea name="message" placeholder="Your Message" rows="4" required class="w-full px-4 py-2 border border-pink-300 rounded"></textarea>
+          <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded transition duration-300 transform hover:scale-105">
+            Send Message
+          </button>
         </form>
         <p id="form-response" class="mt-2 text-green-600 font-semibold text-sm"></p>
       </div>
 
       <!-- Visitor Counter -->
-      <p class="text-sm text-gray-500 mt-6">You are visitor number <span id="counter">1</span></p>
+      <p class="text-sm text-pink-500 mt-6">
+        You are visitor number <span id="counter">1</span>
+      </p>
     </div>
 
     <!-- Footer -->
-    <footer class="mt-8 text-sm text-gray-500 text-center">
+    <footer class="mt-8 text-sm text-pink-500 text-center">
       &copy; 2025 Providence Annor Asemah. All rights reserved.
     </footer>
   </div>
 
   <!-- Scroll to Top Button -->
   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-    class="fixed bottom-5 right-5 bg-blue-500 text-white p-2 rounded-full shadow-lg hidden" 
+    class="fixed bottom-5 right-5 bg-pink-500 text-white p-2 rounded-full shadow-lg hidden" 
     id="scrollTopBtn">↑</button>
 
-  <!-- Script Section -->
+  <!-- Scripts -->
   <script>
     function togglePitch() {
       const pitch = document.getElementById("pitch");
@@ -116,6 +125,7 @@
 
       const form = document.getElementById("contact-form");
       const response = document.getElementById("form-response");
+
       if (form) {
         form.addEventListener("submit", function (e) {
           response.textContent = "Thank you! Your message has been sent.";
@@ -132,6 +142,5 @@
       });
     });
   </script>
-
 </body>
 </html>
