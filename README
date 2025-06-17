@@ -1,98 +1,152 @@
-SwiftRoute AI – Intelligent Logistics 🚚
+# SwiftRoute AI – Intelligent Logistics 🚚
 
 A complete DevOps & Cloud Engineering project to showcase infrastructure provisioning, CI/CD automation, and a dynamic frontend with a functional contact form.
 
-📌 Project Overview
+---
+
+## 📌 Project Overview
 
 SwiftRoute AI is a cloud-based prototype logistics platform that demonstrates:
 
-AWS provisioning using Terraform
+* AWS provisioning using Terraform
+* CI/CD automation via GitHub Actions
+* A dynamic HTML page styled with Tailwind CSS
+* A working Node.js backend for form submissions
 
-CI/CD automation via GitHub Actions
+---
 
-A dynamic HTML page styled with Tailwind CSS
+## 🌐 Live Demo
 
-A working Node.js backend for form submissions
+**Visit**: [http://18.222.76.182](http://18.222.76.182)
 
-🌐 Live Demo
+📸 Screenshot of the deployed app:
+![Screenshot](screenshot.png)
 
-Visit: http://<your-ec2-public-ip>
+---
 
-📸 Add a screenshot of the final deployed app here in your repo.
+## 🔧 Tech Stack
 
-🔧 Tech Stack
+* **Cloud**: AWS EC2
+* **Infrastructure as Code**: Terraform
+* **CI/CD**: GitHub Actions
+* **Web Server**: Nginx (reverse proxy)
+* **App Server**: Node.js (Express)
+* **Frontend**: HTML5 + Tailwind CSS
 
-Cloud: AWS EC2
+---
 
-Infrastructure as Code: Terraform
+## 📁 Project Structure
 
-CI/CD: GitHub Actions
-
-Web Server: Nginx (reverse proxy)
-
-App Server: Node.js (Express)
-
-Frontend: HTML5 + Tailwind CSS
-
-📁 Project Structure
-
+```
 .
 ├── terraform/
 │   ├── main.tf
-│   └── variables.tf
+│   ├── variables.tf
+│   └── outputs.tf
 ├── webapp/
 │   ├── index.html
 │   ├── server.js
-│   └── contact.js
+│   ├── contact.js
+│   └── profile.jpg
 ├── .github/
 │   └── workflows/
 │       ├── terraform.yml
 │       └── deploy-app.yml
+```
 
-🚀 Deployment Instructions
+---
 
-1. 🔐 Setup GitHub Secrets
+## 🚀 Deployment Instructions
+
+### 1. 🔐 Setup GitHub Secrets
 
 In your repo settings, add the following:
 
-AWS_ACCESS_KEY_ID
+* `AWS_ACCESS_KEY_ID`
+* `AWS_SECRET_ACCESS_KEY`
+* `EC2_SSH_KEY` (your private key in base64 format)
+* `EC2_USER` (e.g., `ubuntu`)
+* `EC2_HOST` (your EC2 Public IP)
 
-AWS_SECRET_ACCESS_KEY
+### 2. 🏗 Provision Infrastructure
 
-EC2_SSH_KEY (your private key in base64 format)
+Automatically triggered when you push to `terraform/`:
 
-EC2_USER (e.g., ubuntu)
-
-EC2_HOST (your EC2 Public IP)
-
-2. 🏗 Provision Infrastructure
-
-Automatically triggered when you push to terraform/.
-
+```bash
 git add terraform/* && git commit -m "provision infra" && git push
+```
 
-This runs Terraform from .github/workflows/terraform.yml
+This runs Terraform from `.github/workflows/terraform.yml`
 
-3. 🚀 Deploy Application
+### 3. 🚀 Deploy Application
 
-Automatically triggered when you push to webapp/.
+Automatically triggered when you push to `webapp/`:
 
+```bash
 git add webapp/* && git commit -m "deploy app" && git push
+```
 
 This copies HTML + Node.js files and starts the backend app.
 
-📜 Features
+### 4. 🖥️ SSH into the EC2 Instance & Serve HTML Manually
 
+If Nginx default page appears, move your app files manually:
 
+```bash
+ssh -i terraform-user.pem ubuntu@EC2_HOST
 
-👤 Author
+# Move HTML files to the default Nginx root
+sudo mv /home/ubuntu/webapp/* /var/www/html/
 
-Providence Annor Asemah Lead Cloud & DevOps Engineer
+# Set proper permissions
+sudo chmod -R 755 /var/www/html/
 
-3+ years in DevOps and Cloud Infrastructure
+# Restart Nginx to reflect changes
+sudo systemctl restart nginx
+```
 
-Skilled in AWS, GCP, Kubernetes, Docker, Terraform
+After this, visiting [http://EC2_HOST](http://EC2_HOST) should show your SwiftRoute AI app.
 
-BSc in Computer Science, University of Cape Coast
+### 5. 🔒 (Optional) Secure with HTTPS Using Certbot + DuckDNS
 
-📧 Email: providence@example.com🐙 GitHub: @Providence-Design
+If you're using a DuckDNS domain (e.g., `swiftroute-ai.duckdns.org`), follow these steps:
+
+```bash
+# Install Certbot and Nginx plugin
+sudo apt update
+sudo apt install -y certbot python3-certbot-nginx
+
+# Issue a certificate for your DuckDNS domain
+sudo certbot --nginx -d swiftroute-ai.duckdns.org
+
+# Test HTTPS and auto-renewal
+sudo certbot renew --dry-run
+```
+
+📌 Make sure port 80 is open and your domain points to the EC2 public IP.
+
+---
+
+## 📜 Features
+
+* [x] Infrastructure provisioning with Terraform
+* [x] Reverse proxy with Nginx to Node.js
+* [x] Tailwind-based responsive design
+* [x] Working contact form with `/contact` POST handler
+* [x] CI/CD integration with GitHub Actions
+* [x] Static asset deployment including profile image
+* [x] Optional HTTPS via Certbot & DuckDNS
+
+---
+
+## 👤 Author
+
+**Providence Annor Asemah**
+Lead Cloud & DevOps Engineer
+
+* 3+ years in DevOps and Cloud Infrastructure
+* Skilled in AWS, GCP, Kubernetes, Docker, Terraform
+* BSc in Computer Science, University of Cape Coast
+
+📧 Email: [providence@example.com](mailto:baabaprovidence@gmail.com)
+🐙 GitHub: [@Providence-Design](https://github.com/Providence-Design)
