@@ -2,7 +2,7 @@
 
 A complete DevOps & Cloud Engineering project to showcase infrastructure provisioning, CI/CD automation, and a dynamic frontend with a functional contact form.
 
----
+
 
 ## 📌 Project Overview
 
@@ -13,7 +13,6 @@ SwiftRoute AI is a cloud-based prototype logistics platform that demonstrates:
 * A dynamic HTML page styled with Tailwind CSS
 * A working Node.js backend for form submissions
 
----
 
 ## 🌐 Live Demo
 
@@ -21,9 +20,9 @@ SwiftRoute AI is a cloud-based prototype logistics platform that demonstrates:
 **Visit**: [https://swiftroute-ai.duckdns.org/](https://swiftroute-ai.duckdns.org/)
 
 📸 Screenshot of the deployed app:
-![Screenshot](PageScreenshot.png)
+![Screenshot](pagescreenshot.png)
 
----
+
 
 ## 🔧 Tech Stack
 
@@ -34,7 +33,7 @@ SwiftRoute AI is a cloud-based prototype logistics platform that demonstrates:
 * **App Server**: Node.js (Express)
 * **Frontend**: HTML5 + Tailwind CSS
 
----
+
 
 ## 📁 Project Structure
 
@@ -55,7 +54,7 @@ SwiftRoute AI is a cloud-based prototype logistics platform that demonstrates:
 │       └── deploy-app.yml
 ```
 
----
+
 
 ## 🚀 Deployment Instructions
 
@@ -126,7 +125,7 @@ sudo certbot renew --dry-run
 
 📌 Make sure port 80 is open and your domain points to the EC2 public IP.
 
----
+
 
 ## 📜 Features
 
@@ -138,7 +137,7 @@ sudo certbot renew --dry-run
 * [x] Static asset deployment including profile image
 * [x] Optional HTTPS via Certbot & DuckDNS
 
----
+
 
 ## 👤 Author
 
