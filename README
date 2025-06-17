@@ -138,7 +138,6 @@ sudo certbot renew --dry-run
 * [x] Optional HTTPS via Certbot & DuckDNS
 
 
-
 ## 👤 Author
 
 **Providence Annor Asemah**
